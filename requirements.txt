@@ -1,0 +1,17 @@
+# Install PyTorch appropriate for your CUDA version first when using a local GPU.
+ultralytics>=8.3.0
+opencv-python>=4.9.0
+Pillow>=10.0.0
+ImageHash>=4.3.1
+# `ddgs` is the current DuckDuckGo search package. The scraper also supports
+# the older `duckduckgo-search` import for existing Colab environments.
+ddgs>=9.0.0
+requests>=2.31.0
+tqdm>=4.66.0
+PyYAML>=6.0.1
+transformers>=4.45.0
+torch>=2.2.0
+torchvision>=0.17.0
+safetensors>=0.4.0
+onnx>=1.16.0
+onnxslim>=0.1.31

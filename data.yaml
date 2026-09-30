@@ -1,0 +1,8 @@
+# Paths are relative to this file. `auto_label.py` creates this layout.
+path: ./dataset
+train: images/train
+val: images/val
+names:
+  0: indian_ambulance
+  1: indian_police_vehicle
+  2: indian_fire_tender
