@@ -1,6 +1,8 @@
 # Netra-One: Indian Emergency Vehicle Detection
 
-An end-to-end, reproducible YOLOv8n pipeline for detecting three India-specific emergency-responder vehicle categories in traffic imagery:
+An end-to-end, reproducible YOLOv8n pipeline for detecting three India-specific emergency-responder vehicle categories in traffic imagery. The goal is to give signal systems and traffic monitoring a way to spot ambulances, police vehicles and fire tenders so they can be prioritised.
+
+**Tech:** Python · Ultralytics YOLOv8 · Grounding DINO (Hugging Face Transformers) · PyTorch · OpenCV · ImageHash · ONNX · Google Colab
 
 | ID | YOLO class | Typical target |
 |---:|---|---|
@@ -49,7 +51,7 @@ image/video inference with a green priority-rescue banner
    !python pipeline/validate_dataset.py
    ```
 
-5. Train 35 epochs (within the requested 25–50 range), validate, create plots, and export both formats:
+5. Train for 35 epochs, validate, create plots, and export both formats:
 
    ```bash
    !python train_emergency_yolo.py --device 0 --epochs 35 --batch -1 --imgsz 640
@@ -125,7 +127,7 @@ The command writes `test_samples/detected_<source-name>.*`. Each detection has a
 PRIORITY RESCUE VEHICLE DETECTED: INDIAN_AMBULANCE
 ```
 
-Use `--output test_samples/scene_01.mp4` to set the path and `--show` for an interactive local preview. The output video is re-encoded without original audio, which is normal for this OpenCV-oriented challenge demonstrator.
+Use `--output test_samples/scene_01.mp4` to set the path and `--show` for an interactive local preview. The output video is re-encoded without original audio, which is expected for this OpenCV-based demonstrator.
 
 ## Local visual preview
 
@@ -151,7 +153,7 @@ Open `http://127.0.0.1:8765` in your browser. Once training creates `weights/bes
 ├── colab_train.ipynb             # end-to-end T4 labeling, training, evaluation, export
 ├── make_colab_bundle.py          # creates the Colab upload ZIP
 ├── weights/                    # add release copies of best.pt and best.onnx
-└── test_samples/               # add 3–5 rendered output examples for submission
+└── test_samples/               # rendered inference examples
 ```
 
 ## Responsible data use
